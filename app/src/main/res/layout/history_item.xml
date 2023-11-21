@@ -1,0 +1,51 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/history_item_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Text" />
+
+            <TextView
+                android:id="@+id/history_item_createdAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Text" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/history_item_set_cube"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cube" />
+
+            <TextView
+                android:id="@+id/history_item_set_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="My Text"
+                android:textColor="@android:color/white" />
+        </FrameLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

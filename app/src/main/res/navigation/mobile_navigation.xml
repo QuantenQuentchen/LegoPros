@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_calculator">
+
+    <fragment
+        android:id="@+id/nav_calculator"
+        android:name="com.example.professionallego.ui.calculator.CalculatorFragment"
+        android:label="@string/menu_calculator"
+        tools:layout="@layout/fragment_calculator" >
+        <action
+            android:id="@+id/action_nav_calculator_to_nav_lego_box_box"
+            app:destination="@id/nav_lego_box_box" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.example.professionallego.ui.history.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_nav_history_to_nav_history_details"
+            app:destination="@id/nav_history_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_lego_box_box"
+        android:name="com.example.professionallego.ui.LegoBoxBox.LegoBoxBoxFragment"
+        android:label="@string/menu_box_set"
+        tools:layout="@layout/fragment_lego_box_box" >
+        <action
+            android:id="@+id/action_nav_lego_box_box_to_legoBoxFragment"
+            app:destination="@id/nav_lego_box" />
+        <argument
+            android:name="isSelectMode"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_lego_box"
+        android:name="com.example.professionallego.ui.legoBox.LegoBoxFragment"
+        android:label="@string/menu_box"
+        tools:layout="@layout/fragment_lego_box">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_history_details"
+        android:name="com.example.professionallego.ui.historydetails.HistoryDetailsFragment"
+        android:label="@string/menu_box_set"
+        tools:layout="@layout/fragment_history_details">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">ProfessionalLego</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Lego für Pros</string>
+    <string name="nav_header_subtitle">Ka Digga gib mir nen besseren Namen Wiedner</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="calculation_input">Enter a number in mm</string>
+    <string name="calculation_no_number">No number entered</string>
+
+    <string name="calculation_no_lego_box">No boxes </string>
+
+    <string name="calculate_button">Calculate</string>
+
+    <string name="calculator_output_item_amount">Amount</string>
+
+    <string name="history_item_createdAt">Created At</string>
+
+    <string name="calculation_no_lego_box_set">No Lego Box selected</string>
+
+    <string name="add_lego_box_alert_title">Add Lego Box</string>
+    <string name="add_lego_box_alert_message">Enter a the length in mm.</string>
+    <string name="add_lego_box_alert_pos_btn">Add</string>
+    <string name="add_lego_box_alert_neg_btn">Cancel</string>
+
+    <string name="menu_calculator">Calculator</string>
+    <string name="menu_box">Box</string>
+    <string name="menu_box_set">Box Set</string>
+    <string name="menu_history">History</string>
+    <string name="menu_history_details">History Details</string>
+    <string name="menu_settings">Settings</string>
+    <string name="LegoBoxBoxBlockImgDescr">BlockImage</string>
+    <string name="add_box">Add Box</string>
+    <string name="lego_box_blockset_name">Blockset Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
