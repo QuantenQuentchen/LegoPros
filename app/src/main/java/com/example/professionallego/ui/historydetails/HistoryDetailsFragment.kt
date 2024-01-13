@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.professionallego.R
 import com.example.professionallego.databinding.FragmentHistoryDetailsBinding
-import com.example.professionallego.ui.AppSharedViewModel
+import com.example.professionallego.data.AppSharedViewModel
 import com.example.professionallego.ui.calculator.CalculatorOutputAdapter
 import com.example.professionallego.ui.history.HistoryData
 import java.text.SimpleDateFormat
@@ -22,7 +22,7 @@ class HistoryDetailsFragment : Fragment() {
 
     private var _binding: FragmentHistoryDetailsBinding? = null
 
-    private lateinit var viewModel: HistoryDetailsViewModel
+    //private lateinit var viewModel: HistoryDetailsViewModel
 
     private lateinit var model: AppSharedViewModel
 
@@ -43,7 +43,7 @@ class HistoryDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHistoryDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
         id = arguments?.getInt("id") ?: 0

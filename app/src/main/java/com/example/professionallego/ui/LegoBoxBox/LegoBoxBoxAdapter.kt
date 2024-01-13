@@ -3,16 +3,14 @@ package com.example.professionallego.ui.LegoBoxBox
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.professionallego.R
-import com.example.professionallego.ui.legoBox.LegoItemData
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class LegoBoxBoxAdapter(var items: ArrayList<LegoBoxBoxData>, private val onItemClick:(Item: LegoBoxBoxData) -> Unit, private val onAddClick:(() ->Unit)?):
+class LegoBoxBoxAdapter(var items: ArrayList<LegoBoxData>, private val onItemClick:(Item: LegoBoxData) -> Unit, private val onAddClick:(() ->Unit)?):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val sdf = SimpleDateFormat("yyy/mm/dd hh:mm", Locale.getDefault())
@@ -66,12 +64,12 @@ class LegoBoxBoxAdapter(var items: ArrayList<LegoBoxBoxData>, private val onItem
         }
     }
 
-    fun updateItems(newItems: ArrayList<LegoBoxBoxData>) {
+    fun updateItems(newItems: ArrayList<LegoBoxData>) {
         val diffResult = DiffUtil.calculateDiff(ItemDiffCallback(items, newItems))
         this.items = newItems
         diffResult.dispatchUpdatesTo(this)
     }
-    class ItemDiffCallback(private val oldItems: List<LegoBoxBoxData>, private val newItems: List<LegoBoxBoxData>) : DiffUtil.Callback() {
+    class ItemDiffCallback(private val oldItems: List<LegoBoxData>, private val newItems: List<LegoBoxData>) : DiffUtil.Callback() {
         override fun getOldListSize() = oldItems.size
         override fun getNewListSize() = newItems.size
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) = oldItems[oldItemPosition].id == newItems[newItemPosition].id

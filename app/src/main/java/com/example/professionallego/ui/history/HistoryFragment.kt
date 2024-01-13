@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -13,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.professionallego.R
 import com.example.professionallego.databinding.FragmentHistoryBinding
-import com.example.professionallego.ui.AppSharedViewModel
+import com.example.professionallego.data.AppSharedViewModel
 
 class HistoryFragment : Fragment() {
 

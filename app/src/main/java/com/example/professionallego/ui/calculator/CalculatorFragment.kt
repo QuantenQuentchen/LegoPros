@@ -7,15 +7,13 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
-import androidx.core.view.accessibility.AccessibilityEventCompat.setAction
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.professionallego.R
 import com.example.professionallego.databinding.FragmentCalculatorBinding
-import com.example.professionallego.ui.AppSharedViewModel
-import com.example.professionallego.ui.history.HistoryData
+import com.example.professionallego.data.AppSharedViewModel
 import com.example.professionallego.ui.legoBox.LegoItemData
 import com.google.android.material.snackbar.Snackbar
 
@@ -28,7 +26,7 @@ class CalculatorFragment : Fragment() {
     private lateinit var calcButton: Button
     private lateinit var selectSetBtn: Button
 
-    private lateinit var model: AppSharedViewModel;
+    private lateinit var model: AppSharedViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -102,7 +100,7 @@ class CalculatorFragment : Fragment() {
 
 
     private fun setBoxData(){
-        var calcId = model.calculationBoxBoxId
+        val calcId = model.calculationBoxBoxId
         if(calcId == null){
             Snackbar.make(binding.root, getString(R.string.calculation_no_lego_box_set), Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show()
@@ -130,12 +128,6 @@ class CalculatorFragment : Fragment() {
         if(desiredLength == null || desiredLength == 0){
             calcInputEditText.clearFocus()
             Snackbar.make(binding.root, getString(R.string.calculation_no_number), Snackbar.LENGTH_SHORT)
-                .setAction("Action", null).show()
-            return false
-        }
-        if(selectedBox == null){
-            calcInputEditText.clearFocus()
-            Snackbar.make(binding.root, getString(R.string.calculation_no_lego_box), Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show()
             return false
         }
@@ -221,9 +213,7 @@ class CalculatorFragment : Fragment() {
     }
 
     private fun addHistory(items: ArrayList<CalculatorOutputData>, Input: Int, BoxId: Int){
-        val currentList = model.History.value ?: arrayListOf()
-        currentList.add(HistoryData(currentList.size, System.currentTimeMillis(), BoxId, Input, items))
-        model.History.value = currentList
+        model.addHistoryData(items, Input, BoxId)
     }
 
 
